@@ -10,12 +10,14 @@ while gets
 		while gets
 			data << $_.strip
 		end
+
 	elsif $_ =~ /^(([A-Z][A-Z0-9]*)\s+|\s+)([A-Z]+)\s+(.*)$/
 		label, operation, operand = $1, $3, $4
 		
 		instructions << { :label => label.strip, :operation => operation.strip, :operand => operand.strip }
-	else
-		puts "Syntax error."
+
+	elsif $_.strip.size > 0
+		raise "Syntax error."
 	end
 end
 
