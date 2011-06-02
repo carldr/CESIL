@@ -136,12 +136,3 @@ while true
 		exit
 	end
 end
-
-
-instructions.each do |instruction|
-	puts "%10s %10s %s" % [ instruction[ :label ], instruction[ :operation ], instruction[ :operand ] ]
-end
-
-data.each do |data|
-	puts data
-end
