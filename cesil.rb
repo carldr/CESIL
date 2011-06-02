@@ -102,7 +102,22 @@ while true
 		end
 
 	when "JIZERO"
-		pc += 1
+		if a == 0
+			found = false
+			instructions.each_with_index do |label_hunt, c|
+				if label_hunt[ :label ] == instruction[ :operand ]
+					found = true
+					pc = c
+				end
+			end
+			
+			if found == false
+				raise "Couldn't find label #{instruction[ :operand ]} in line #{pc}."
+			end
+
+		else
+			pc += 1
+		end
 
 	when "JINEG"
 		if a < 0
