@@ -1,0 +1,5 @@
+Run as :
+
+  ruby cesil.rb <source file>
+
+Included is sample CESIL code to sum a sequence of numbers.
