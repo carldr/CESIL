@@ -14,6 +14,8 @@ while gets
 		label, operation, operand = $1, $3, $4
 		
 		instructions << { :label => label.strip, :operation => operation.strip, :operand => operand.strip }
+	else
+		puts "Syntax error."
 	end
 end
 
@@ -134,5 +136,9 @@ while true
 
 	when "HALT"
 		exit
+		
+	else
+		raise "Syntax error in line #{pc}."
+
 	end
 end
